@@ -1,0 +1,14 @@
+<div  style="width: 18rem;">
+    <img src='{{recipe.imageRoute}}' class="card-img-top" alt="Recipe Image">
+    <div class="card-body">
+      <h5 class="card-title">{{ recipe.recipeName }}</h5>
+      <p class="card-text">Preparation Time: {{ recipe.preparationTimeMinutes }}</p>
+      <p class="card-text">Difficulty: {{ recipe.difficultyLevel }}</p>
+    </div>
+  </div>
+  <button style="width: 18rem;" (click)="redirectToRecipeDetails()">
+  עבור לפרטי מתכון</button>
+  <button style="width: 18rem;" (click)="redirectToRecipeEdit()">
+    עבור לעריכת המתכון</button>
+
+  

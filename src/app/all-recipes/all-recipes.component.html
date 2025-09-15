@@ -1,0 +1,24 @@
+<div>
+  <h1>המתכונים שלנו</h1>
+  <div id="filter">
+    <div>
+      <label>סנן לפי שם:</label>
+      <input type="text" [(ngModel)]="filterName" (input)="onFilterChange()" />
+    </div>
+    <div>
+      <label>סנן לפי קטגוריה:</label>
+      <select [(ngModel)]="filterCategory" (change)="onFilterChange()">
+        <option value="">כל הקטגוריות</option>
+        <option *ngFor="let category of categories" [value]="+category.code">{{category.name}}</option>
+      </select>
+    </div>
+    <div>
+      <label>סנן לפי משך הכנה:</label>
+      <input type="number" [(ngModel)]="filterPreparationTime" (input)="onFilterChange()" />
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let recipe of filteredRecipes" class="card" style="width: 18rem;">
+  <app-small-recipe [recipe]="recipe"></app-small-recipe>
+</div>

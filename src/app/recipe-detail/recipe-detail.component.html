@@ -1,0 +1,51 @@
+
+<div *ngIf="recipe" class="recipe-details"  class="card" style="width: 18rem;">
+    <h2>{{ recipe.recipeName }}</h2>
+    <h3> {{ displayDifficultyStars(recipe.difficultyLevel) }}</h3>
+
+    <img src="{{ recipe.imageRoute }}" class="card-img-top" alt="{{ recipe.recipeName }}">
+     
+      <h3>Duration of preparation: </h3>
+  
+    <div>{{ recipe.preparationTimeMinutes| hoursAndMinutes }}</div>
+      
+    <h3>Ingredients:</h3>
+    <div *ngFor="let r of recipe.ingredients">
+      {{ r }}
+      {{ ikons[ingredientToEmojiIndex[r]] }}
+   </div>
+
+  
+<!-- 🍜 Steaming Bowl (often represents noodles)
+🍝 Spaghetti
+🍣 Sushi
+🍤 Fried Shrimp
+🍱 Bento Box
+🍛 Curry Rice
+🍚 Cooked Rice
+🍲 Pot of Food
+🥘 Shallow Pan of Food (often represents paella or similar dishes)
+🍢 Oden
+🥟 Dumpling
+🍡 Dango
+🍥 Fish Cake with Swirl
+🥮 Moon Cake
+🍣 Sushi
+🍕 Pizza Slice
+🌮 Taco
+🌯 Burrito
+🥙 
+🥚  -->
+
+    <h3>Instructions:</h3>
+    <ol>
+       <li *ngFor="let step of recipe.preparationSteps">{{ step }}</li>
+    </ol>
+
+    <button *ngIf="isCurrentUserOwner" class="btn btn-danger" (click)="deleteRecipe()">delete Recipe</button>
+  </div>
+  
+
+
+
+  

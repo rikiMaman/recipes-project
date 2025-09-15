@@ -1,0 +1,13 @@
+<div>
+    <input class="form-control" type="text" placeholder="שם משתמש" [(ngModel)]="username">
+  </div>
+  <div>
+    <input class="form-control" type="password" placeholder="סיסמה" [(ngModel)]="password">
+  </div>
+  
+    <button class="d" class="nav-item"  id="login"  (click)="onSubmit()"> <b>התחברות</b></button>
+      <div id="error" role="alert">
+        {{error}}
+      
+  </div>
+ 

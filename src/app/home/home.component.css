@@ -1,0 +1,21 @@
+input, button{
+    width: 29%;
+    direction: rtl;
+    margin-left: 35%;
+    margin-top: 5%;
+    border-color: rgb(248, 120, 210);
+    background-color: rgb(245, 118, 146);
+    border-width: thick;
+    padding: 2%;
+}
+
+#login{
+    font-size: large;
+    border-color: palevioletred;
+    font-weight: bold;
+    color: rgb(23, 7, 236);
+}
+b{
+    font-size: xx-large;
+    font-weight: lighter;
+}

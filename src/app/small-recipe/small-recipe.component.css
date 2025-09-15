@@ -1,0 +1,48 @@
+body{
+    direction: rtl;
+}
+img{
+    width: 150px;
+    height: 100px;
+
+}
+h1{
+    text-align: center;
+    font-size: 460%;
+    /* color: rgb(77, 78, 57); */
+    /* margin-right: 37%; */
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-width: 50%;
+    /* border-color: palevioletred; */
+    border-style:outset ;
+    /* position: sticky; */
+
+}
+.card-body{
+    margin: 2% 1%;
+    padding: 0%;
+}
+b{
+    font-size: large;
+}
+.card{
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2%;
+    margin-left: 40%;
+    /* border-color: violet; */
+    /* margin-left: 10%; */
+    
+    
+}
+button{
+    background-color: white;
+    border-color: black;
+    transition-duration: 0.4s;
+}
+button:hover {
+    background-color: rgb(235, 176, 195);
+  }

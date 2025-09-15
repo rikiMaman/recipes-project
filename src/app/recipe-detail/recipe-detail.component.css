@@ -1,0 +1,33 @@
+.card{
+    /* text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2%;
+    margin-left: 5%;
+    border-color: violet;
+    padding: 4%; */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* עדיף כיוון עמודה לפריטים בכרטיס */
+    justify-content: center; /* ממרכז את התוכן פנימית */
+    align-items: center; 
+    margin: 2% auto; /* מרווח מאוזן מכל הכיוונים וממרכז את הכרטיס */
+    border: 1px solid violet; /* גבול בצבע סגול */
+    padding: 4%; /* ריווח פנימי */
+    width: 60%; /* שינוי רוחב הכרטיס */
+    /* max-width: 700px;  */
+    width: 90% !important; /* רוחב רחב יותר */
+    max-width: 600px !important; /* רוחב מקסימלי מוגדר */
+    /* ... שאר הכללים ... */
+}
+h3{
+    font-size:x-large ;
+}
+ol {
+    text-align: left;
+}
+/* .instructions-list li {
+    text-align: left;
+  } */
+  
+  

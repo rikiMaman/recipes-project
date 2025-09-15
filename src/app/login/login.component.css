@@ -1,0 +1,36 @@
+/* input, button{
+    margin-left: 35%;
+    margin-top: 4%;
+    
+    
+} */
+input, button{
+    width: 29%;
+    direction: rtl;
+    margin-left: 35%;
+    margin-top: 5%;
+    border-width: thin;
+    background-color: rgb(255, 242, 255);
+    padding: 2%;
+    margin-top: 5%;
+    border-color:rgb(38, 24, 238);
+}
+#login{
+    background-color:  rgb(245, 118, 146);
+    border-color:  rgb(245, 118, 146);
+    
+}
+
+
+.d:hover{
+    font-size: large;
+    border-color: palevioletred;
+    font-weight: bold;
+    /* color: palevioletred; */
+    background-color: palevioletred;
+}
+b{
+    font-size: xx-large;
+    font-weight: lighter;
+}
+

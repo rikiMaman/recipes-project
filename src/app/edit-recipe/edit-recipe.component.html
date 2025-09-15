@@ -1,0 +1,39 @@
+<form [formGroup]="recipeForm" (ngSubmit)="saveRecipe()">
+    <label for="recipeName">שם המתכון:</label>
+    <input type="text" id="recipeName" formControlName="recipeName">
+  
+    <label for="categoryCode">קטגוריה:</label>
+    <select formControlName="categoryCode" id="categoryCode">
+      <option *ngFor="let category of categories" [value]="+category.code">{{category.name}}</option>
+    </select>
+
+    <label for="preparationTimeMinutes">זמן הכנה</label>
+    <input type="number" id="preparationTimeMinutes" formControlName="preparationTimeMinutes">
+  
+    <label for="difficultyLevel">דרגת קושי:</label>
+    <input type="number" id="difficultyLevel" formControlName="difficultyLevel">
+
+
+    <div formArrayName="ingredients">
+      <div *ngFor="let ingredient of ingredients.controls; let i=index">
+        <input type="text" [formControlName]="i" placeholder="מרכיב">
+        <button type="button" class="remove" (click)="removeIngredient(i)">הסר</button>
+      </div>
+      <button type="button" class="remove" (click)="addIngredient()">הוסף מרכיב</button>
+    </div>
+    
+    <div formArrayName="preparationSteps">
+      <div *ngFor="let step of preparationSteps.controls; let i=index">
+        <input type="text" [formControlName]="i" placeholder="שלב הכנה">
+        <button type="button" class="remove" (click)="removeStep(i)">הסר</button>
+      </div>
+      <button type="button" class="remove" (click)="addStep()">הוסף שלב</button>
+    </div>
+  
+   
+    <label for="imageRoute">לינק לתמונה :</label>
+    <input type="text" id="imageRoute" formControlName="imageRoute">
+    <button type="button" (click)="ToAllRecipe()" >לא רוצה לשנות בסוף</button>
+    <button type="submit">שמור שינויים</button>
+  </form>
+  

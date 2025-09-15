@@ -1,0 +1,95 @@
+body {
+    direction: rtl;
+}
+
+
+
+
+
+b {
+    font-size: large;
+}
+
+.recipe {
+    /* background-color: rgb(160, 243, 140); */
+    padding: 0%;
+    margin: 1%, 4%;
+    color: aqua;
+    /* display: inline-table; */
+    /* display: inline-block;
+    display: flex; */
+}
+
+.card {
+    text-align: center;
+    display: inline-block;
+    justify-content: space-evenly;
+    margin: 2%;
+    margin-left: 8%;
+    border-color: violet;
+    /* margin-left: 10%; */
+
+
+}
+
+
+.filters-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter {
+    margin-bottom: 10px;
+}
+
+
+label {
+    margin-right: 5px;
+    float: right;
+    flex-direction: column; /* להציג את האלמנטים בעמודה אחת */
+    align-items: flex-start;
+    align-items: flex-start;
+    grid-auto-flow: column; /* מציין שהתיבות יוצגו בצורה אופקית */
+    justify-content: end;
+    /* align-self: ; */
+
+}
+
+input,
+select {
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    float: left;
+    align-self: auto;
+    flex-direction: column; /* להציג את האלמנטים בעמודה אחת */
+    align-items: flex-start;
+    grid-auto-flow: column; /* מציין שהתיבות יוצגו בצורה אופקית */
+    justify-content: end; /*
+        grid-template-columns: 1fr; /* מציין שרק עמודה אחת */
+
+    /* align-self: flex-end; */
+}
+#filter{
+    display: flex;
+    justify-content: flex-end;
+    /* display: grid; */
+    
+
+    
+    
+}
+h1 {
+    text-align: center;
+    font-size: 460%;
+    color: rgb(77, 78, 57);
+    /* margin-right: 37%; */
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-width: 50%;
+    border-color: palevioletred;
+    border-style: outset;
+    /* position: sticky; */
+
+}

@@ -1,0 +1,13 @@
+input, button{
+    width: 29%;
+    direction: rtl;
+    margin-left: 32%;
+    margin-top: 2%;
+    border-color:rgb(38, 24, 238);
+    border-width: thin;
+    padding: 2%;
+}
+button{
+    background-color: rgb(245, 118, 146);
+    border-color: white;
+}

@@ -1,0 +1,57 @@
+form {
+    max-width: 500px; /* רוחב מקסימלי לטופס */
+    margin: 0 auto; /* מרכוז את הטופס באמצע העמוד */
+    padding: 20px; /* מרווח פנימי לטופס */
+    border: 1px solid #ccc; /* מסגרת סביב הטופס */
+    border-radius: 5px; /* חידוד של הפינות של הטופס */
+  }
+  
+  label {
+    direction: rtl;
+    display: block;
+    margin-bottom: 2px;
+  }
+  
+  button[type="submit"], button[type="button"] {
+    display: block; /* הפך את הכפתור למאפיין בלוק */
+    width: 100%; /* רוחב מלא */
+    margin-top: 10px; /* מרווח עליון */
+    padding: 10px; /* מרווח פנימי לכפתור */
+    background-color: #007bff; /* צבע רקע */
+    color: #fff; /* צבע טקסט */
+    border: none; /* הסרת מסגרת */
+    border-radius: 5px; /* חידוד של הפינות */
+    cursor: pointer; /* מחווה העכבר */
+  }
+  
+  button[type="button"] {
+    padding: 5px 10px; /* מרווח פנימי */
+    background-color: #2300a3; /* צבע רקע */
+    color: #fff; /* צבע טקסט */
+    border: none; /* הסרת מסגרת */
+    border-radius: 3px; /* חידוד של הפינות */
+    cursor: pointer; /* מחווה העכבר */
+  }
+  textarea {
+    height: 200px; /* גובה השדה בפיקסלים */
+    width: 100%; /* רוחב השדה יהיה זהה לרוחב של הקונטיינר */
+    padding: 10px; /* מרווח בין התוכן לגבולות השדה */
+    font-size: 16px; /* גודל הגופן */
+  }
+  input[type="text"], input[type="number"] {
+    text-align: right;
+    width: 100%;
+    padding: 10px; /* מרווח בין התוכן לגבולות השדה */
+    font-size: 16px; /* גודל הגופן */
+  }
+  button[type="button"].remove{
+    text-align: right;
+    direction: rtl;
+    width: 20%;
+  }
+  button[type="button"].remove:hover{
+    background-color: darkred;
+  }
+  
+  
+  

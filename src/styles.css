@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+/* body{
+    background-image: url('src\assets\רקע.png'); 
+    background-size: 100%; 
+    background-attachment: initial;
+    backface-visibility: hidden;
+    background-position: left; 
+    margin-top: 7%;
+    margin-left: 5%;
+    background-repeat: no-repeat; 
+    margin-top: 20%;
+} */
+/* body {
+    background-image: url('src\assets\1200.jpg'); 
+    background-size: 100%; 
+    object-position: 30%;
+    
+} */
+image{
+    opacity: 0.3;
+}
+
