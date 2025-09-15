@@ -12,7 +12,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class RecipeDetailComponent implements OnInit {
   @Input() recipe: Recipe | undefined;
-  category :Category[]=[];
+  category: Category[] = [];
   ingredientToEmojiIndex: { [key: string]: number } = {
     cupcake: 0,
     cookie: 1,
@@ -32,32 +32,32 @@ export class RecipeDetailComponent implements OnInit {
     Candy: 15,
     HoneyPot: 16,
     water: 17,
-    Sugar :18,
-    Oil :19,
-    Flour :20,
-    Chocolate :21,
-    Milk :22
-    
+    Sugar: 18,
+    Oil: 19,
+    Flour: 20,
+    Chocolate: 21,
+    Milk: 22
+
     // ... וכן הלאה ...
   };
-  
-  ikons:string[]=[ '🧁','🍪','🍣','🎂', '🍰', '🍩', '🍕', '🍔', '🍞','🥐' ,'🥨',
-   '🥧', '🍳', '🍦' ,'🍫' ,'🍬' ,'🍯','💧','🍚',
-   '🫒', '🌾', '🍫','🥛'];
+
+  ikons: string[] = ['🧁', '🍪', '🍣', '🎂', '🍰', '🍩', '🍕', '🍔', '🍞', '🥐', '🥨',
+    '🥧', '🍳', '🍦', '🍫', '🍬', '🍯', '💧', '🍚',
+    '🫒', '🌾', '🍫', '🥛'];
   currentUser: any = JSON.parse(sessionStorage.getItem('currentUser') || '{}');
-  recipe3: any = JSON.parse(sessionStorage.getItem('currentRecipe') || '{}')? JSON.parse(sessionStorage.getItem('currentRecipe') || '{}') :2;
-  isCurrentUserOwner: boolean=false ;
-  
+  recipe3: any = JSON.parse(sessionStorage.getItem('currentRecipe') || '{}') ? JSON.parse(sessionStorage.getItem('currentRecipe') || '{}') : 2;
+  isCurrentUserOwner: boolean = false;
 
-  
 
-  constructor(private route: ActivatedRoute, private router: Router, private recipeService: RecipeService,private authService: AuthService) {
-   
-    
+
+
+  constructor(private route: ActivatedRoute, private router: Router, private recipeService: RecipeService, private authService: AuthService) {
+
+
     if (this.isCurrentUserOwner) {
       console.log(JSON.parse(sessionStorage.getItem('currentUser') || '{}').Id);
       console.log(7);
-      console.log(JSON.parse(sessionStorage.getItem('currentRecipe') || '{}').userCode? JSON.parse(sessionStorage.getItem('recipe') || '{}').userCode:1 )
+      console.log(JSON.parse(sessionStorage.getItem('currentRecipe') || '{}').userCode ? JSON.parse(sessionStorage.getItem('recipe') || '{}').userCode : 1)
       console.log("הצג כפתור 'למחיקת המתכון'");
     }
     console.log(this.currentUser.Id === this.recipe3.userCode);
@@ -74,7 +74,11 @@ export class RecipeDetailComponent implements OnInit {
       // השתמש במזהה לקבלת המתכון מהשירות
       this.recipeService.getRecipeById(Number(id)).subscribe(recipe => {
         this.recipe = recipe;
-        this.isCurrentUserOwner= recipe.userCode===this.currentUser.id
+        // תיקון הנתיב לתמונות כדי שיעבוד ב-GitHub Pages
+        if (this.recipe.imageRoute?.startsWith('src/assets')) {
+          this.recipe.imageRoute = this.recipe.imageRoute.replace('src/', '');
+        }
+        this.isCurrentUserOwner = recipe.userCode === this.currentUser.id
         console.log(this.currentUser);
         console.log(this.recipe.userCode)
         console.log(this.isCurrentUserOwner);
@@ -86,13 +90,13 @@ export class RecipeDetailComponent implements OnInit {
     // console.log(this.recipe);
 
     // this.isCurrentUserOwner= this.currentUser.Id === this.recipe?.userCode;
-   }
+  }
 
- 
+
 
   ngOnInit(): void {
-   
-    
+
+
     // // קבל את המזהה מה-URL באמצעות ה- ActivatedRoute
     // if (!this.authService.getIsLoggedIn()) {
     //   console.log(this.authService.getIsLoggedIn());
@@ -139,13 +143,13 @@ export class RecipeDetailComponent implements OnInit {
 
   isCurrentUserRecipeOwner(): boolean {
 
-    return true; 
+    return true;
   }
 
   deleteRecipe() {
     if (confirm('Are you sure you want to delete this recipe?')) {
- 
-      this.recipeService.deleteRecipe(this.recipe?this.recipe.recipeCode: 1000).subscribe(
+
+      this.recipeService.deleteRecipe(this.recipe ? this.recipe.recipeCode : 1000).subscribe(
         () => {
           // מעבר לעמוד הפרטים של המתכון אחרי שמירה
           // this.router.navigate(['/recipe-details', this.recipeId]);
@@ -154,23 +158,23 @@ export class RecipeDetailComponent implements OnInit {
         (error: any) => {
           console.error('Error updating recipe:', error);
         }
-      //   (r: Recipe) =>
-      //  {
-      //   if(r)
-      //   {
-      //     alert("success!")
-      //     this.router.navigate(['/all-recipe']);
+        //   (r: Recipe) =>
+        //  {
+        //   if(r)
+        //   {
+        //     alert("success!")
+        //     this.router.navigate(['/all-recipe']);
 
-      //   }
-      //   else{
+        //   }
+        //   else{
 
-      //     //  error => {
-      //       // אם המחיקה נכשלה, נציג הודעת שגיאה
-      //       console.error('Failed to delete recipe:');
-      //       alert('Failed to delete recipe. Please try again later.');
-      //     }
+        //     //  error => {
+        //       // אם המחיקה נכשלה, נציג הודעת שגיאה
+        //       console.error('Failed to delete recipe:');
+        //       alert('Failed to delete recipe. Please try again later.');
+        //     }
 
-      //   }
+        //   }
         // recipe=new Recipe[]
         // אם המחיקה בוצעה בהצלחה, נותרים למשתמש רק לנווט לעמוד הרלוונטי
       );
@@ -179,7 +183,7 @@ export class RecipeDetailComponent implements OnInit {
   }
 }
 
-  
+
 
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../user/user.component';
-import {RecipeService} from '../services/Recipe.Service'
+import { RecipeService } from '../services/Recipe.Service'
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -13,19 +13,26 @@ export class AllRecipesComponent implements OnInit {
   recipes: Recipe[] = [];
   filteredRecipes: Recipe[] = [];
   filterName: string = '';
-  filterCategory: number =0;
+  filterCategory: number = 0;
   filterPreparationTime: number | null = null;
   categories: { code: number, name: string }[] = [
-    {code: 1, name: 'חלבי'},
+    { code: 1, name: 'חלבי' },
     { code: 2, name: 'בשרי' },
     { code: 3, name: 'קינוחים' },
     // הוספת קטגוריות נוספות כרצונך
   ];
   public selectedProductToShow!: Recipe
-  constructor(private recipeService: RecipeService, private router: Router){
+  constructor(private recipeService: RecipeService, private router: Router) {
     this.recipeService.getRecipesList().subscribe((data: Recipe[]) => {
       this.recipes = data;
+      this.recipes.forEach(recipe => {
+        if (recipe.imageRoute?.startsWith('src/assets')) {
+          recipe.imageRoute = recipe.imageRoute.replace('src/', '');
+        }
+      });
+
     });
+    this.applyFilters();
   }
 
   ngOnInit(): void {
@@ -33,7 +40,7 @@ export class AllRecipesComponent implements OnInit {
       this.recipes = data;
       this.applyFilters();
     });
-   
+
   }
 
   applyFilters(): void {
@@ -42,7 +49,7 @@ export class AllRecipesComponent implements OnInit {
     console.log(this.filterPreparationTime)
     this.filteredRecipes = this.recipes.filter(recipe =>
       (recipe.recipeName.toLowerCase().includes(this.filterName.toLowerCase()) || this.filterName === '') &&
-      (this.filterCategory === null || recipe.categoryCode == this.filterCategory || this.filterCategory==0) &&
+      (this.filterCategory === null || recipe.categoryCode == this.filterCategory || this.filterCategory == 0) &&
       (this.filterPreparationTime === null || recipe.preparationTimeMinutes <= this.filterPreparationTime)
     );
     console.log(this.filteredRecipes);
